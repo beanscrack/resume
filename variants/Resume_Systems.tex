@@ -1,0 +1,64 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.66in,top=0.52in,bottom=0.50in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.14em,topsep=2.0pt,itemsep=2.0pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\bfseries\fontsize{10.2}{11}\selectfont}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+\begin{document}
+\begin{center}
+  {\fontsize{16.7}{18}\selectfont\bfseries Jerry Wu}\\[-1pt]
+  {\footnotesize TEL \enspace 226-962-0696 \enspace|\enspace \href{mailto:sumsjerrywu@gmail.com}{sumsjerrywu@gmail.com} \enspace|\enspace
+  \href{https://www.linkedin.com/in/jerry-wu-03210a30b/}{LinkedIn} \enspace|\enspace \href{https://github.com/beanscrack}{github.com/beanscrack} \enspace|\enspace \href{https://website-beta-seven-81.vercel.app/}{Portfolio}}\\[1pt]
+  {\fontsize{8.1}{9}\selectfont\bfseries SYSTEMS SOFTWARE ENGINEERING  |  C++ / CUDA / COMPILERS}
+\end{center}
+\vspace{-5pt}
+\section*{EXPERIENCE}
+\noindent\textbf{Software Engineering Intern}\hfill \textit{May 2026 -- Aug 2026}\\
+\textit{Carta}\hfill Waterloo, ON\par
+\begin{itemize}
+\item Cut CircleCI pipeline time 33\% (18 to 12 minutes) by parallelizing Java builds, moving Error Prone checks off the critical path and tuning concurrency across 5 stages.
+\item Reduced median latency by 10\% across 8 Django API endpoints by moving persistence, event processing and downstream requests to asynchronous Kafka consumers.
+\item Restored access-control state across 50+ services after refreshes using an idempotent Spring Boot/Quartz replay job; managed least-privilege AWS permissions with Terraform.
+\item Automated nightly sales-demo refreshes with PostgreSQL snapshots, AWS S3/KMS and Kubernetes CronJobs deployed via Helm, saving 2.5 hours/week while preserving record IDs and stable URLs.
+\end{itemize}
+\noindent\textbf{Software Engineering Intern, Fixed Income}\hfill \textit{May 2025 -- Sep 2025}\\
+\textit{PengYang Asset Management}\hfill Beijing, China\par
+\begin{itemize}
+\item Reduced portfolio backtesting to under 5 seconds using vectorized pandas and multithreading over 10 years of hourly data from thousands of Chinese equities.
+\end{itemize}
+\section*{TECHNICAL SKILLS}
+\noindent\textbf{Languages:} C++, C, Python, Java, CUDA\par
+\noindent\textbf{Systems:} LLVM/Clang, CMake, Linux, multithreading, memory management, profiling, x86\par
+\noindent\textbf{Infrastructure:} Kubernetes, Docker, PostgreSQL, Kafka, AWS, CircleCI\par
+\section*{OPEN SOURCE}
+\noindent\textbf{LLVM / Clang --- Compiler Contributions} \hfill \textit{Oct 2026}\par
+\begin{itemize}
+\item Developed an independent Clang semantic-analysis fix for C++ lambda init-captures (\href{https://github.com/llvm/llvm-project/pull/229953}{PR \#229953}); explicitly credited as parallel work in \href{https://github.com/llvm/llvm-project/pull/234793}{merged PR \#234793}.
+\item Submitted LLVM TailCallElim memory-effects fix (\href{https://github.com/llvm/llvm-project/pull/235209}{PR \#235209, open}) with regression tests for byval copy-back and inlining.
+\end{itemize}
+\section*{PROJECTS}
+\noindent\href{https://github.com/beanscrack/LLM-Inference-C-CUDA-}{\textbf{C++/CUDA LLM Inference Runtime}} \hfill \textit{C++20, CUDA, NVFP4/FP8, CMake}\par
+\begin{itemize}
+\item Built a native C++20/CUDA runtime for Qwen3.6-27B-NVFP4 with hybrid Gated-DeltaNet/attention, chunked prefill and custom quantized linear kernels.
+\item Ran a 27B model on an RTX 5080 with 16 GB VRAM by keeping 44/64 layers resident and streaming 5.28 GB from pinned CPU memory using asynchronous prefetch.
+\item Compared all 64 layers against a NumPy reference; recorded matching final-logit argmax and 6.48 tokens/s in a 128-token greedy-decoding test.
+\end{itemize}
+\noindent\href{https://github.com/beanscrack/hft-static-arena-allocator}{\textbf{Static Arena Allocator}} \hfill \textit{C++20, mmap, Benchmarking}\par
+\begin{itemize}
+\item Built an experimental C++20 allocator with 40 size classes, a 64 KiB static arena, free lists and mmap-backed fallbacks for latency-sensitive allocation.
+\item Measured 2.76x fixed-size and 3.10x mixed-size speedups over system new/delete in reproducible, single-threaded allocation microbenchmarks.
+\end{itemize}
+\section*{EDUCATION}
+\noindent\textbf{University of Waterloo} \hfill Waterloo, ON\\
+Bachelor of Computer Science \hfill Sep 2024 -- Expected 2028\par
+
+\end{document}
